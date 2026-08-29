@@ -39,8 +39,14 @@ agrivit-plus/
 ├── notebooks/          # exploratory / experiment notebooks
 ├── weights/            # saved checkpoints (not committed — see Weights below)
 ├── export/             # ONNX export + quantization scripts
+├── mylogs/             # experiment tracking (not committed — see Experiment Tracking below)
+│   ├── tensorboard/
+│   ├── mlflow/
+│   └── optuna/
 ├── requirements.txt
-└── README.md
+├── README.md
+├── LICENSE
+└── CONTRIBUTING.md
 ```
 
 ## Environment Setup
@@ -77,6 +83,31 @@ python training/evaluate.py --model agrivit_plus --checkpoint weights/agrivit_pl
 ```
 
 Reports accuracy, F1-score, confusion matrix, and Grad-CAM/attention visualizations.
+
+## Experiment Tracking
+
+Training runs are logged to `mylogs/` (git-ignored — regenerate locally by re-running training):
+
+```python
+# TensorBoard
+writer = SummaryWriter(log_dir="mylogs/tensorboard")
+
+# MLflow
+mlflow.set_tracking_uri("mylogs/mlflow")
+
+# Optuna
+study = optuna.create_study(
+    storage="sqlite:///mylogs/optuna/study.db",
+    study_name="agrivit_plus"
+)
+```
+
+View logs locally:
+
+```bash
+tensorboard --logdir mylogs/tensorboard
+mlflow ui --backend-store-uri mylogs/mlflow
+```
 
 ## Model Weights
 
