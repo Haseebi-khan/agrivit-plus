@@ -128,4 +128,4 @@ Architecture and experimental design inspired by recent work on hybrid CNN-Trans
 
 ## License
 
-TBD
+MIT — see [LICENSE](./LICENSE)
