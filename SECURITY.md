@@ -2,80 +2,101 @@
 
 ## Supported Versions
 
-Security fixes are currently provided for the latest version of the
-`main` branch.
+AgriViT-Plus is currently under active development and does not have
+official versioned releases yet.
 
-| Version | Supported |
-|---------|-----------|
-| main    | N/A       |
-| Older releases | N/A |
+Security updates are currently provided for the latest code available on
+the `main` branch.
+
+| Version                   | Supported          |
+| ------------------------- | ------------------ |
+| `main`                    | :white_check_mark: |
+| Development branches      | :x:                |
+| Unreleased/older versions | :x:                |
 
 ## Reporting a Vulnerability
 
-Please do not report security vulnerabilities through public GitHub issues.
+Please **do not report security vulnerabilities through public GitHub
+issues**.
 
-Instead, report them privately to the project maintainers through the
-security contact available in the repository's GitHub Security settings.
+If you discover a potential security vulnerability in AgriViT-Plus,
+please report it privately through GitHub's **Security Advisories** feature
+or contact the project maintainers privately.
 
-Please include:
+### Please Include
 
-- A clear description of the vulnerability.
-- Steps required to reproduce the issue.
-- The affected file, component, or workflow.
-- Potential impact.
-- Any suggested mitigation or fix.
+When reporting a vulnerability, provide as much of the following information
+as possible:
+
+* A clear description of the vulnerability.
+* The affected component, file, or functionality.
+* Steps to reproduce the issue.
+* Expected and actual behavior.
+* Potential security impact.
+* Relevant logs, screenshots, or error messages.
+* A suggested fix or mitigation, if available.
+
+Please avoid including sensitive information in the report.
 
 ## Sensitive Information
 
-Do not include passwords, API keys, access tokens, private datasets,
-credentials, or other sensitive information in issues or pull requests.
+Never include the following information in public issues, pull requests,
+or discussions:
 
-Never commit secrets such as:
+* API keys
+* Access tokens
+* Passwords
+* `.env` files
+* Cloud credentials
+* Database credentials
+* Private dataset credentials
+* Private or personally identifiable information
 
-```text
-.env
-API keys
-cloud credentials
-database passwords
-access tokens
-private dataset credentials
+Use environment variables and GitHub repository secrets where appropriate.
 
-Use environment variables or GitHub Actions secrets where appropriate.
+## Responsible Disclosure
 
-Responsible Disclosure
+We ask security researchers and contributors to allow the maintainers
+reasonable time to investigate and address reported vulnerabilities before
+publicly disclosing them.
 
-We ask security researchers and contributors to allow reasonable time
-for the maintainers to investigate and address reported vulnerabilities
-before publicly disclosing them.
+Please avoid publicly discussing an unresolved vulnerability until the
+maintainers have had an opportunity to assess and address the issue.
 
-Thank you for helping keep AgriViT-Plus and its contributors safe.
+## Response Process
 
+After receiving a vulnerability report, the maintainers will:
 
-### Important
+1. Acknowledge receipt of the report.
+2. Review and attempt to reproduce the reported issue.
+3. Assess its severity and potential impact.
+4. Develop and test an appropriate fix where necessary.
+5. Release or deploy the fix when appropriate.
+6. Notify the reporter when the issue has been addressed.
 
-You should also have a `.gitignore` containing things such as:
+Response times may vary depending on the severity and complexity of the
+reported vulnerability.
 
-```gitignore
-.env
-.env.*
-!.env.example
+## Scope
 
-__pycache__/
-*.py[cod]
+This security policy applies to the AgriViT-Plus source code, training
+pipeline, data-processing utilities, deployment/export scripts, and other
+software components maintained in this repository.
 
-.venv/
-venv/
-*.egg-info/
+Third-party dependencies and external datasets may have their own security
+policies and should be reported to their respective maintainers when
+appropriate.
 
-weights/
-checkpoints/
+## Security Best Practices for Contributors
 
-mylogs/
-mlruns/
+Contributors should:
 
-*.pt
-*.pth
-*.onnx
+* Never commit credentials or secrets.
+* Review changes for accidental exposure of sensitive information.
+* Keep dependencies reasonably up to date.
+* Avoid committing private datasets or personally identifiable information.
+* Use `.gitignore` to prevent accidental inclusion of local credentials,
+  logs, checkpoints, and other sensitive or large files.
+* Follow the project's contribution guidelines when submitting changes.
 
-.DS_Store
-.ipynb_checkpoints/
+Thank you for helping keep AgriViT-Plus secure.
