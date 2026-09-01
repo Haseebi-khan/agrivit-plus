@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+
+contact_links:
+
+* name: Security Vulnerability
+  url: https://github.com/Haseebi-khan/agrivit-plus/security/advisories/new
+  about: Please report security vulnerabilities privately through GitHub Security Advisories.
+
+* name: Questions & Discussions
+  url: https://github.com/Haseebi-khan/agrivit-plus/discussions
+  about: Ask questions, discuss ideas, and get help with AgriViT-Plus.
